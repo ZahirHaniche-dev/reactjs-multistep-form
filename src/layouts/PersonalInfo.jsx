@@ -1,49 +1,65 @@
 import React, { useState } from 'react';
+import bgSideBar from '../images/bg-sidebar-desktop.svg';
 
 export default function PersonalInfo() {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-blue-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 shadow-lg">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl w-full bg-white shadow-md rounded-lg">
 
         {/* Bloc de gauche : Étapes */}
-        <div className="col-span-1 bg-blue-700 pt-12 pl-6 rounded-l-lg flex flex-col ">
-          <div className="space-y-8">
-            <div className="flex items-center">
-              <div className="h-10 w-10 flex items-center justify-center bg-blue-500 rounded-full text-white font-bold">1</div>
-              <div className="ml-4 text-white text-lg font-semibold">YOUR INFO</div>
-            </div>
-            <div className="flex items-center">
-              <div className="h-10 w-10 flex items-center justify-center bg-blue-500 rounded-full text-white font-bold">2</div>
-              <div className="ml-4 text-white text-lg font-semibold">SELECT PLAN</div>
-            </div>
-            <div className="flex items-center">
-              <div className="h-10 w-10 flex items-center justify-center bg-blue-500 rounded-full text-white font-bold">3</div>
-              <div className="ml-4 text-white text-lg font-semibold">ADD-ONS</div>
-            </div>
-            <div className="flex items-center">
-              <div className="h-10 w-10 flex items-center justify-center bg-blue-500 rounded-full text-white font-bold">4</div>
-              <div className="ml-4 text-white text-lg font-semibold">SUMMARY</div>
-            </div>
-          </div>
+        <div 
+          className="col-span-1 bg-blue-700 pt-12 pl-6 rounded-l-lg flex flex-col bg-cover bg-no-repeat"
+          style={{ backgroundImage: `url(${bgSideBar})` }}
+        >
+          <ul className="space-y-8">
+            <li className="flex items-center gap-1">
+                <span className="h-8 w-8 flex items-center justify-center bg-sky-200 border rounded-full text-sky-950 text-sm font-bold">1</span>
+                <span className="ml-4 flex flex-col justify-center space-y-0">
+                  <div className="text-gray-400 text-sm font-normal uppercase">Step 1</div>
+                  <div className="text-gray-300 text-sm uppercase mt-1 font-semibold">Personal Info</div>
+                </span>
+            </li>
+            <li className="flex items-center gap-1">
+              <span className="h-8 w-8 flex items-center justify-center bg-transparent border rounded-full text-white text-sm font-bold">2</span>
+              <span className="ml-4 flex flex-col justify-center space-y-0">
+                <div className="text-gray-400 text-sm font-normal uppercase">Step 2</div>
+                <div className="text-gray-300 text-sm font-semibold uppercase mt-1">Select Plan</div>
+              </span>
+            </li>
+            <li className="flex items-center gap-1">
+              <span className="h-8 w-8 flex items-center justify-center bg-transparent border rounded-full text-white text-sm font-bold">3</span>
+              <span className="ml-4 flex flex-col justify-center space-y-0">
+                <div className="text-gray-400 text-sm font-normal uppercase">Step 3</div>
+                <div className="text-gray-300 text-sm font-semibold uppercase mt-1">Pick Add-Ons</div>
+              </span>
+            </li>
+            <li className="flex items-center gap-1">
+              <span className="h-8 w-8 flex items-center justify-center bg-transparent border rounded-full text-white text-sm font-bold">4</span>
+              <span className="ml-4 flex flex-col justify-center space-y-0">
+                <div className="text-gray-400 text-sm font-normal uppercase">Step 4</div>
+                <div className="text-gray-300 text-sm font-semibold uppercase mt-1">Summary</div>
+              </span>
+            </li>
+          </ul>
         </div>
 
         {/* Bloc de droite : Formulaire */}
         <div className="col-span-2 p-12">
           <div className="pb-8 ">
-            <div className="block text-2xl font-medium text-gray-700">
+            <div className="block text-2xl text-sky-950 font-semibold">
               Personal Info
             </div>
-            <div className="block text-lg font-medium text-gray-700">
+            <div className="block text-md font-normal text-gray-400">
               Please provide your name, email, and phone number.
             </div>
           </div>
           
-          <form className="space-y-6">
+          <form className="space-y-5">
             <div>
-              <label htmlFor="name" className="block text-xs font-medium text-gray-700">
+              <label htmlFor="name" className="block text-xs font-medium text-sky-950">
                 Name
               </label>
               <input
@@ -51,12 +67,12 @@ export default function PersonalInfo() {
                 name="name"
                 type="text"
                 required
-                placeholder="Vanessa Mint"
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-xs"
+                placeholder="Haniche Zahir"
+                className="mt-1 block w-full px-4 py-3 border text-3xl text-sky-950 font-semibold border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-sky-950 focus:border-sky-950 sm:text-xs"
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-xs font-medium text-gray-700">
+              <label htmlFor="email" className="block text-xs font-medium text-sky-950">
                 Email Address
               </label>
               <input
@@ -66,12 +82,12 @@ export default function PersonalInfo() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="vanessamint@"
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-xs"
+                placeholder="haniche.zahir@gmail.com"
+                className="mt-1 block w-full px-4 py-3 border text-3xl text-sky-950 font-semibold border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-sky-950 focus:border-sky-950 sm:text-xs"
               />
             </div>
             <div>
-              <label htmlFor="phone" className="block text-xs font-medium text-gray-700">
+              <label htmlFor="phone" className="block text-xs font-medium text-sky-950">
                 Phone Number
               </label>
               <input
@@ -81,19 +97,19 @@ export default function PersonalInfo() {
                 required
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
-                placeholder="e.g. +1 234 567 890"
-                className={`mt-1 block w-full px-3 py-2 border ${
-                  phone ? 'border-gray-300' : 'border-red-500'
-                } rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-xs`}
+                placeholder="+33 6 46 96 98 63"
+                className={`mt-1 block w-full px-4 py-3 border  text-sky-950 font-semibold ${
+                  phone ? 'border-gray-300' : 'border-red-700'
+                } rounded-md shadow-sm focus:outline-none focus:ring-sky-950 focus:border-sky-950 sm:text-xs`}
               />
               {!phone && (
-                <p className="mt-2 text-xs text-red-600">This field is required</p>
+                <p className="mt-2 text-xs text-red-700 font-semibold">This field is required</p>
               )}
             </div>
-            <div>
+            <div className='flex justify-end'>
               <button
                 type="submit"
-                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-xs font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+                className=" flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-xs font-medium text-white bg-sky-950 hover:bg-sky-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-950 "
               >
                 Next Step
               </button>
