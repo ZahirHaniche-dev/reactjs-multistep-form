@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import bgSideBar from '../images/bg-sidebar-desktop.svg';
+import { EnvelopeIcon, PhoneIcon, UserIcon } from '../../node_modules/@heroicons/react/16/solid'
+
 
 export default function PersonalInfo() {
   const [email, setEmail] = useState('');
@@ -59,9 +61,14 @@ export default function PersonalInfo() {
           
           <form className="space-y-5">
             <div>
-              <label htmlFor="name" className="block text-xs font-medium text-sky-950">
-                Name
-              </label>
+              <div className='flex items-center space-x-1 '>
+                <label>
+                    <UserIcon class="size-3 text-sky-950" />
+                </label>
+                <label htmlFor="name" className="block text-xs font-medium text-sky-950">
+                  Name : <span className='text-red-700'>*</span>
+                </label>
+              </div>
               <input
                 id="name"
                 name="name"
@@ -72,9 +79,14 @@ export default function PersonalInfo() {
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-xs font-medium text-sky-950">
-                Email Address
-              </label>
+              <div className='flex items-center space-x-1 '>
+                <label>
+                    <EnvelopeIcon class="size-3 text-sky-950" />
+                </label>
+                <label htmlFor="email" className="block text-xs font-medium text-sky-950">
+                  Email Adress : <span className='text-red-700'>*</span>
+                </label>
+              </div>
               <input
                 id="email"
                 name="email"
@@ -87,9 +99,14 @@ export default function PersonalInfo() {
               />
             </div>
             <div>
-              <label htmlFor="phone" className="block text-xs font-medium text-sky-950">
-                Phone Number
-              </label>
+              <div className='flex items-center space-x-1 '>
+                <label>
+                    <PhoneIcon class="size-3 text-sky-950" />
+                </label>
+                <label htmlFor="phone" className="block text-xs font-medium text-sky-950">
+                  Phone Number : <span className='text-red-700'>*</span>
+                </label>
+              </div>
               <input
                 id="phone"
                 name="phone"
