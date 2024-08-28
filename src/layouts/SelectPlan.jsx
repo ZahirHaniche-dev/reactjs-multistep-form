@@ -1,8 +1,7 @@
 import FormPlan from "./Form/FormPlan";
 import SideBar from "./SideBar/SideBar";
 
-export default function SelectPlan() {
-
+export default function SelectPlan({onNext}) {
   
   return (
       <div>
@@ -13,10 +12,11 @@ export default function SelectPlan() {
             <SideBar />
 
             {/* Bloc de droite : Formulaire */}
-            <FormPlan />
+            <FormPlan onNext={onNext}/>
 
           </div>
         </div>
       </div>
   )
 }
+

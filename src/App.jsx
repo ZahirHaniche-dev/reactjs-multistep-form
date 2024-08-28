@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PersonalInfo from "./layouts/PersonalInfo"
 import SelectPlan from "./layouts/SelectPlan";
+import PickAddOns from './layouts/PickAddOns';
 import './assets/fonts.css';
 
 function App() {
@@ -14,7 +15,8 @@ function App() {
   return (
     <>
       {step === 1 && <PersonalInfo onNext={handleNextStep} />}
-      {step === 2 && <SelectPlan />}
+      {step === 2 && <SelectPlan   onNext={handleNextStep}/>}
+      {step === 3 && <PickAddOns   onNext={handleNextStep}/>}
     </>
   )
 }

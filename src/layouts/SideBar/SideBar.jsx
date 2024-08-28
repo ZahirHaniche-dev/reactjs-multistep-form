@@ -3,7 +3,7 @@ import { getData } from "../../features/sidebarSlice";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from 'react';
 
-export default function SideBar({ stepState }) {
+export default function SideBar() {
     const dispatch = useDispatch();
     const { data, error } = useSelector(state => state.sidebarReducer);
 
