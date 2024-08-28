@@ -3,7 +3,7 @@ import FormPersoInfo from "./Form/FormPersoInfo";
 import SideBar from "./SideBar/SideBar";
 
 
-export default function PersonalInfo() {
+export default function PersonalInfo({ onNext }) {
 
   const [state, setState] = useState(1);
 
@@ -16,7 +16,7 @@ export default function PersonalInfo() {
           <SideBar state={state} setState={setState}  />
 
           {/* Bloc de droite : Formulaire */}
-          <FormPersoInfo />
+          <FormPersoInfo  onNext={onNext}/>
 
         </div>
       </div>

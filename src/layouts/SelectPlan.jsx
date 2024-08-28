@@ -1,4 +1,4 @@
-import FormPersoInfo from "./Form/FormPersoInfo";
+import FormPlan from "./Form/FormPlan";
 import SideBar from "./SideBar/SideBar";
 
 export default function SelectPlan() {
@@ -13,7 +13,7 @@ export default function SelectPlan() {
             <SideBar />
 
             {/* Bloc de droite : Formulaire */}
-            <FormPersoInfo />
+            <FormPlan />
 
           </div>
         </div>

@@ -1,18 +1,16 @@
-import { useState } from 'react';
 import { useForm, FormProvider } from "react-hook-form";
 import { EnvelopeIcon, PhoneIcon, UserIcon } from '@heroicons/react/16/solid';
 import Input from '../../components/Input';
 
-export default function FormPersoInfo() {
+export default function FormPersoInfo({ onNext }) {
     
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
-
-    const methods = useForm()
+    const methods = useForm();
 
     const onSubmit = methods.handleSubmit(data => {
-        console.log(data)
-    })
+        console.log(data);
+        onNext(); // Appeler onNext seulement si le formulaire est valide
+    });
+
 
     return (
         <>
@@ -26,8 +24,9 @@ export default function FormPersoInfo() {
                     </div>
                 </div>
                 <FormProvider {...methods}>
-                    <form className="space-y-6"
-                    onSubmit={e => e.preventDefault()}
+                    <form 
+                    className="space-y-6"
+                    onSubmit={onSubmit}
                     noValidate >
                         <Input 
                             label="Name"

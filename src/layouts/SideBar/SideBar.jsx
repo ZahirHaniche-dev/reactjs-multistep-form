@@ -11,7 +11,6 @@ export default function SideBar({ stepState }) {
         dispatch(getData());
     }, [dispatch]);
 
-
   return (
     <>
       <div className="hidden sm:flex col-span-1 bg-blue-700 pt-12 pl-6 rounded-l-lg flex-col bg-cover bg-no-repeat"
