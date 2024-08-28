@@ -1,0 +1,26 @@
+ [
+    {   
+        "id": 1,
+        "number": "1",
+        "step": "Step 1",
+        "text_step": "Personal Info" 
+    },
+    {   
+        "id": 2,
+        "number": "2",
+        "step": "Step 2",
+        "text_step": "Select Plan" 
+    },
+    {   
+        "id": 3,
+        "number": "3",
+        "step": "Step 3",
+        "text_step": "Pick Add-Ons" 
+    },
+    {   
+        "id":4,
+        "number": "4",
+        "step": "Step 4",
+        "text_step": "Summary" 
+    }  
+ ]
