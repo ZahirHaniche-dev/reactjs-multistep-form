@@ -15,8 +15,8 @@ function App() {
   return (
     <>
       {step === 1 && <PersonalInfo onNext={handleNextStep} />}
-      {step === 2 && <SelectPlan   onNext={handleNextStep}/>}
-      {step === 3 && <PickAddOns   onNext={handleNextStep}/>}
+      {step === 2 && <SelectPlan   step={1} onNext={handleNextStep}/>}
+      {step === 3 && <PickAddOns   step={2} onNext={handleNextStep}/>}
     </>
   )
 }

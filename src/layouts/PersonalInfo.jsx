@@ -2,8 +2,9 @@ import FormPersoInfo from "./Form/FormPersoInfo";
 import SideBar from "./SideBar/SideBar";
 
 
-export default function PersonalInfo({ onNext }) {
-
+export default function PersonalInfo({ step, onNext }) {
+  console.log(step);
+  
 
   return (
     <div>
@@ -11,7 +12,7 @@ export default function PersonalInfo({ onNext }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl w-full bg-white shadow-md rounded-lg">
 
           {/* Bloc de gauche Desktop : Étapes */}
-          <SideBar  />
+          <SideBar  step={step} />
 
           {/* Bloc de droite : Formulaire */}
           <FormPersoInfo  onNext={onNext}/>

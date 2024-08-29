@@ -1,7 +1,7 @@
 import FormPlan from "./Form/FormPlan";
 import SideBar from "./SideBar/SideBar";
 
-export default function SelectPlan({onNext}) {
+export default function SelectPlan({step, onNext}) {
   
   return (
       <div>
@@ -9,7 +9,7 @@ export default function SelectPlan({onNext}) {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl w-full bg-white shadow-md rounded-lg">
 
             {/* Bloc de gauche Desktop : Étapes */}
-            <SideBar />
+            <SideBar step={step} />
 
             {/* Bloc de droite : Formulaire */}
             <FormPlan onNext={onNext}/>

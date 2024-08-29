@@ -57,14 +57,13 @@ export default function FormPlan({ onNext }) {
                                  onClick={() => valuePlanClick(plan)} 
                                  className={`border px-2 py-3 rounded-lg flex items-center justify-center cursor-pointer hover:bg-sky-50 ${
                                     valuePlan?.id === plan.id ? 'bg-sky-100 border-sky-500' : 'bg-white'
-                                 }`}
-                            >
+                                 }`}>
                                 <li className="items-center justify-center space-y-3">
                                     <img src={plan.icon} alt={`${plan.name} Icon`} />
                                     <div>
                                         <h3 className="text-sm font-semibold">{plan.name}</h3>
                                         <p className="text-gray-500 text-sm">
-                                            $ {isChecked ? plan.price : plan.price * 10}/{isChecked ? 'mo' : 'y'}
+                                            ${isChecked ? plan.price : plan.price * 10}/{isChecked ? 'month' : 'year'}
                                         </p>
                                         <p className="text-gray-500 text-sm">
                                             {isChecked ? "" : "2 months free"}
@@ -74,10 +73,9 @@ export default function FormPlan({ onNext }) {
                             </div>
                         ))}
                     </ul>
-                    
                     <div className="flex items-center justify-center mt-6">
                         <span className="mr-2 text-sm">
-                            {!isChecked ? "Yearly" : <span className='font-semibold'>Yearly</span> }
+                            {!isChecked ? <span className='font-semibold'>Yearly</span>  : "Yearly"}
                         </span>
                         <label className="flex cursor-pointer select-none items-center">
                             <div className="relative">
