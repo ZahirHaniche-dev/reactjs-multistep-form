@@ -71,7 +71,7 @@ export default function FormAdds({ onNext }) {
                                     </div>
                                 </div>
                                 <span className="text-sky-900 font-semibold text-sm">
-                                    {addOn.price}/mo
+                                    +$ {addOn.price}/mo
                                 </span>
                             </li>
                         ))}

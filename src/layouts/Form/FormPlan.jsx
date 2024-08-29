@@ -5,15 +5,17 @@ import advancedIcon from '../../images/icon-advanced.svg';
 import proIcon from '../../images/icon-pro.svg';
 
 export default function FormPlan({ onNext }) {
-    const plans = [
-        { name: 'Arcade', price: 9, icon: arcadeIcon, id: 1 },
-        { name: 'Advanced', price: 12, icon: advancedIcon, id: 2 },
-        { name: 'Pro', price: 15, icon: proIcon, id: 3 },
-    ];
-
     const [isChecked, setIsChecked] = useState(false);
     const [valuePlan, setValuePlan] = useState(null);
     const [errorMessage, setErrorMessage] = useState('');
+    
+    const plans = [
+        { name: 'Arcade', price: 9, icon: arcadeIcon, id: 1, monthly: isChecked },
+        { name: 'Advanced', price: 12, icon: advancedIcon, id: 2, monthly: isChecked  },
+        { name: 'Pro', price: 15, icon: proIcon, id: 3, monthly: isChecked  },
+    ];
+
+    
 
     const handleCheckboxChange = () => {
         setIsChecked(!isChecked);

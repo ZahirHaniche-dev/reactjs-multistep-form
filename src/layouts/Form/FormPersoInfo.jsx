@@ -52,13 +52,13 @@ export default function FormPersoInfo({ onNext }) {
                         
                         
                         <div className='flex justify-end'>
-                        <button
-                            onClick={onSubmit}
-                            type="submit"
-                            className=" flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-xs font-medium text-white bg-sky-950 hover:bg-sky-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-950 "
-                        >
-                            Next Step
-                        </button>
+                            <button
+                                onClick={onSubmit}
+                                type="submit"
+                                className=" flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-xs font-medium text-white bg-sky-950 hover:bg-sky-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-950 "
+                            >
+                                Next Step
+                            </button>
                         </div>
                     </form>
                 </FormProvider>
