@@ -18,7 +18,17 @@ export default function FormSummary({onNext, recap}) {
             </div>
             <form>
                 <ul className="space-y-4">
-                
+                <ul>
+                {summary.map((item, index) => (
+                    <li key={index} className="mb-2 p-2 border-b border-gray-200">
+                        {Object.entries(item).map(([key, value]) => (
+                            <div key={key} className="text-sm">
+                                <strong>{key}:</strong> {value.toString()}
+                            </div>
+                        ))}
+                    </li>
+                ))}
+            </ul>
                 </ul>
                 <div className="flex justify-between mt-6">
                     <button

@@ -24,10 +24,10 @@ function App() {
 
   return (
     <>
-      {step === 1 && <PersonalInfo onNext={handleNextStep} />}
-      {step === 2 && <SelectPlan   step={1} onNext={handleNextStep}/>}
-      {step === 3 && <PickAddOns   step={2} onNext={handleNextStep}/>}
-      {step === 4 && <Summary   recap={recap} step={3} onNext={handleNextStep}/>}
+      {step === 1 && <PersonalInfo step={step} onNext={handleNextStep} />}
+      {step === 2 && <SelectPlan   step={2} onNext={handleNextStep}/>}
+      {step === 3 && <PickAddOns   step={3} onNext={handleNextStep}/>}
+      {step === 4 && <Summary   recap={recap} step={4} onNext={handleNextStep}/>}
     </>
   )
 }
