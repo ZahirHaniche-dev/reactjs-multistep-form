@@ -3,23 +3,37 @@ import { useForm, FormProvider } from "react-hook-form";
 
 export default function FormAdds({ onNext }) {
 
-    const methods = useForm();
-
     const adds = [
         { name: 'Online Service', price: 1, information: "Access to multiplayer games.", id: 1, checked: false},
         { name: 'Larger Storage', price: 2, information: "Extra 1TB of cloud save.", id: 2, checked: false },
         { name: 'Customizable Profile', price: 2, information: "Custom theme of your profile.", id: 3, checked: false },
     ];
 
+    const methods = useForm();
+    const { handleSubmit } = methods;
+
     const [selectedAddOns, setSelectedAddOns] = useState([]);
 
-    const handleToggle = (id) => {
-        setSelectedAddOns((prevSelected) =>
-            prevSelected.includes(id)
-                ? prevSelected.filter((addOnId) => addOnId !== id)
-                : [...prevSelected, id]
-        );
+    const handleToggle = (addOn) => {
+        setSelectedAddOns((prevSelected) => {
+            const isSelected = prevSelected.find(item => item.id === addOn.id);
+            if (isSelected) {
+                return prevSelected.filter((item) => item.id !== addOn.id);
+                
+            } else {
+                return [...prevSelected, addOn];
+            }
+        })
     };
+    
+    const onSubmit = handleSubmit(data => {
+        if (selectedAddOns) {
+            console.log("Selected Plan:", selectedAddOns);
+            onNext(); 
+        } else {
+            setErrorMessage('Please select a plan.');
+        }
+    });
 
   return (
     <div className="col-span-2 p-6 sm:p-12">
@@ -32,22 +46,22 @@ export default function FormAdds({ onNext }) {
                 </div>
             </div>
             <FormProvider {...methods}>
-                <form>
+                <form onSubmit={onSubmit} noValidate>
                     <ul className="space-y-4">
                         {adds.map((addOn) => (
                             <li
                                 key={addOn.id}
-                                onClick={() => handleToggle(addOn.id)}
+                                onClick={() => handleToggle(addOn)}
                                 className={`border px-4 py-4 rounded-lg flex items-center cursor-pointer hover:bg-sky-50 justify-between ${
-                                    selectedAddOns.includes(addOn.id) ? 'bg-sky-50' : ''
+                                    selectedAddOns.find(item => item.id === addOn.id) ? 'bg-sky-50' : ''
                                 }`}
                             >
                                 <div className="flex items-center space-x-4">
                                     <input
                                         type="checkbox"
                                         className="accent-sky-900 h-5 w-5"
-                                        checked={selectedAddOns.includes(addOn.id)}
-                                        onChange={() => handleToggle(addOn.id)}
+                                        checked={!!selectedAddOns.find(item => item.id === addOn.id)}
+                                        onChange={() => handleToggle(addOn)}
                                     />
                                     <div>
                                         <h3 className="text-sm font-semibold">{addOn.name}</h3>
@@ -57,7 +71,7 @@ export default function FormAdds({ onNext }) {
                                     </div>
                                 </div>
                                 <span className="text-sky-900 font-semibold text-sm">
-                                    +$ {addOn.price}/mo
+                                    {addOn.price}/mo
                                 </span>
                             </li>
                         ))}
@@ -67,7 +81,7 @@ export default function FormAdds({ onNext }) {
                             type="button"
                             className="py-2 px-4 border border-transparent rounded-md shadow-sm text-xs font-medium text-sky-900 bg-gray-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-950"
                         >
-                            Go Back
+                            Previous
                         </button>
                         <button
                             type="submit"

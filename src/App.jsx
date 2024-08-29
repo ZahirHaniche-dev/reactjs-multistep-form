@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PersonalInfo from "./layouts/PersonalInfo"
 import SelectPlan from "./layouts/SelectPlan";
 import PickAddOns from './layouts/PickAddOns';
+import Summary from './layouts/Summary';
 import './assets/fonts.css';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       {step === 1 && <PersonalInfo onNext={handleNextStep} />}
       {step === 2 && <SelectPlan   step={1} onNext={handleNextStep}/>}
       {step === 3 && <PickAddOns   step={2} onNext={handleNextStep}/>}
+      {step === 4 && <Summary   step={3} onNext={handleNextStep}/>}
     </>
   )
 }

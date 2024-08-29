@@ -25,7 +25,6 @@ export default function FormPlan({ onNext }) {
     function valuePlanClick(plan) {
         setValuePlan(plan);
         setErrorMessage(''); 
-        console.log(plan);
     }
 
     const onSubmit = handleSubmit(data => {
