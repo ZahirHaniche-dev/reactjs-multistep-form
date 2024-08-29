@@ -1,20 +1,24 @@
 import React, { useState } from 'react';
 import { useForm, FormProvider } from "react-hook-form";
 
-export default function FormSummary({onNext}) {
+export default function FormSummary({onNext, recap}) {
+
+    const [summary, setSummary] = useState(recap);
+    console.log(summary);
+    
   return (
     <div className="col-span-2 p-6 sm:p-12">
             <div className="pb-8">
                 <div className="block text-2xl text-sky-950 font-semibold">
-                    Pick Add-Ons
+                    Finishing up
                 </div>
                 <div className="block text-md font-normal text-gray-400">
-                    Enhance your gaming experience with add-ons.
+                    Double-check everything looks OK before confirming.
                 </div>
             </div>
             <form>
                 <ul className="space-y-4">
-                    A FAIRE RECAPITULATIF DES ETAPES
+                
                 </ul>
                 <div className="flex justify-between mt-6">
                     <button

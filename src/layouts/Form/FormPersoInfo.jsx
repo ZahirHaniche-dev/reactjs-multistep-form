@@ -8,7 +8,7 @@ export default function FormPersoInfo({ onNext }) {
 
     const onSubmit = methods.handleSubmit(data => {
         console.log("Personal Info :", data);
-        onNext(); // Appeler onNext seulement si le formulaire est valide
+        onNext(data); // Appeler onNext seulement si le formulaire est valide
     });
 
 

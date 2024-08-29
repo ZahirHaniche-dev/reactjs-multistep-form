@@ -28,8 +28,8 @@ export default function FormAdds({ onNext }) {
     
     const onSubmit = handleSubmit(data => {
         if (selectedAddOns) {
-            console.log("Selected Plan:", selectedAddOns);
-            onNext(); 
+            //console.log("Selected Plan:", selectedAddOns);
+            onNext(selectedAddOns); 
         } else {
             setErrorMessage('Please select a plan.');
         }

@@ -29,8 +29,8 @@ export default function FormPlan({ onNext }) {
 
     const onSubmit = handleSubmit(data => {
         if (valuePlan) {
-            console.log("Selected Plan:", valuePlan);
-            onNext(); 
+           // console.log("Selected Plan:", valuePlan);
+            onNext(valuePlan); 
         } else {
             setErrorMessage('Please select a plan.');
         }
