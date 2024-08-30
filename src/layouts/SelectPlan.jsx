@@ -1,15 +1,18 @@
 import FormPlan from "./Form/FormPlan";
-import SideBar from "./SideBar/SideBar";
+import SideBarDesktop from "./SideBar/SideBarDesktop";
+import SideBarMobile from "./SideBar/SideBarMobile";
 
 export default function SelectPlan({step, onNext}) {
   
   return (
       <div>
-        <div className="min-h-screen bg-blue-50 flex items-center justify-center p-6 sm:p-12 lg:px-8 shadow-lg">
+        {/* Bloc de gauche Mobile : Étapes */}
+        <SideBarMobile  step={step} />
+        <div className="flex items-center justify-center p-6 sm:p-12 lg:px-8 ">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl w-full bg-white shadow-md rounded-lg">
 
             {/* Bloc de gauche Desktop : Étapes */}
-            <SideBar step={step} />
+            <SideBarDesktop step={step} />
 
             {/* Bloc de droite : Formulaire */}
             <FormPlan onNext={onNext}/>

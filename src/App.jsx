@@ -24,13 +24,13 @@ function App() {
   };
 
   return (
-    <>
+    <div className='min-h-screen bg-blue-50'>
       {step === 1 && <PersonalInfo  step={step} onNext={handleNextStep} />}
       {step === 2 && <SelectPlan  step={2} onNext={handleNextStep} />}
       {step === 3 && <PickAddOns  step={3} onNext={handleNextStep} />}
       {step === 4 && <Summary recap={recap} step={4} onNext={handleNextStep} />}
       {step === 5 && <Result  step={5} />}
-    </>
+    </div>
   )
 }
 
