@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { useForm, FormProvider } from "react-hook-form";
+import Button from '../../components/Button';
 
-export default function FormSummary({onNext, recap}) {
+export default function FormSummary({recap}) {
 
     const [summary, setSummary] = useState(recap);
 
@@ -80,13 +80,8 @@ export default function FormSummary({onNext, recap}) {
                         </span>
                     </li>
                 </ul>
-                <div className='flex justify-end'>
-                    <button
-                        type="submit"
-                        className=" flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-xs font-medium text-white bg-sky-950 hover:bg-sky-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-950 "
-                    >
-                        Next Step
-                    </button>
+                <div className='flex justify-end'> 
+                    <Button bgColor="bg-sky-900" textColor="text-white" text="Confirm" />
                 </div>
             </form>
 

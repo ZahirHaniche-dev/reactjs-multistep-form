@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm, FormProvider } from "react-hook-form";
+import Button from '../../components/Button';
 
 export default function FormAdds({ onNext }) {
 
@@ -77,18 +78,8 @@ export default function FormAdds({ onNext }) {
                         ))}
                     </ul>
                     <div className="flex justify-between mt-6">
-                        <button
-                            type="button"
-                            className="py-2 px-4 border border-transparent rounded-md shadow-sm text-xs font-medium text-sky-900 bg-gray-200 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-950"
-                        >
-                            Previous
-                        </button>
-                        <button
-                            type="submit"
-                            className="py-2 px-4 border border-transparent rounded-md shadow-sm text-xs font-medium text-white bg-sky-950 hover:bg-sky-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-950"
-                        >
-                            Next Step
-                        </button>
+                        <Button bgColor="bg-gray-200" textColor="text-sky-900" text="Previous" />
+                        <Button bgColor="bg-sky-900" textColor="text-white" text="Next Step" />
                     </div>
                 </form>
             </FormProvider>
