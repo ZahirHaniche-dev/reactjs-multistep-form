@@ -26,7 +26,7 @@ export default function FormPersoInfo({ onNext }) {
                 </div>
                 <FormProvider {...methods}>
                     <form 
-                    className="space-y-6"
+                    className="space-y-6 animate-fadeIn"
                     onSubmit={onSubmit}
                     noValidate >
                         <Input 
@@ -50,8 +50,6 @@ export default function FormPersoInfo({ onNext }) {
                             placeholder="+33 6 46 96 98 63"
                             icone=<PhoneIcon className="size-3 text-sky-950" />
                         />
-                        
-                        
                         <div className='flex justify-end'>
                             <Button bgColor="bg-sky-900" textColor="text-white" text="Next Step" />
                         </div>

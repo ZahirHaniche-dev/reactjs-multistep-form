@@ -47,7 +47,7 @@ export default function FormAdds({ onNext }) {
                 </div>
             </div>
             <FormProvider {...methods}>
-                <form onSubmit={onSubmit} noValidate>
+                <form onSubmit={onSubmit} className='animate-fadeIn' noValidate>
                     <ul className="space-y-4">
                         {adds.map((addOn) => (
                             <li

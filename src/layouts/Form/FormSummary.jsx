@@ -1,8 +1,10 @@
+import { useForm, FormProvider } from "react-hook-form";
 import React, { useState } from 'react';
 import Button from '../../components/Button';
 
-export default function FormSummary({recap}) {
+export default function FormSummary({recap, onNext}) {
 
+    const methods = useForm();
     const [summary, setSummary] = useState(recap);
 
     const chunkArray = (array, size) => {
@@ -29,7 +31,11 @@ export default function FormSummary({recap}) {
         return total + (item.price || 0);
       }, 0);
       
-      console.log(totalPrice); 
+    console.log(totalPrice); 
+
+    const onSubmit = methods.handleSubmit(data => {
+        onNext(data); // Appeler onNext seulement si le formulaire est valide
+    });
     
   return (
     <div className="col-span-2 p-6 sm:p-12">
@@ -41,7 +47,7 @@ export default function FormSummary({recap}) {
                     Double-check everything looks OK before confirming.
                 </div>
             </div>
-            <form>
+            <form onSubmit={onSubmit} className="animate-fadeIn" noValidate>
                 <ul className="space-y-4 pb-6">
                     <li className="border px-4 py-4 rounded-lg flex items-center cursor-pointer hover:bg-sky-50 justify-between" >
                         <div className="flex items-center space-x-4">

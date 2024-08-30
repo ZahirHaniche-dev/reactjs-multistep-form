@@ -3,6 +3,7 @@ import PersonalInfo from "./layouts/PersonalInfo"
 import SelectPlan from "./layouts/SelectPlan";
 import PickAddOns from './layouts/PickAddOns';
 import Summary from './layouts/Summary';
+import Result from './layouts/Result';
 import './assets/fonts.css';
 
 function App() {
@@ -24,10 +25,11 @@ function App() {
 
   return (
     <>
-      {step === 1 && <PersonalInfo step={step} onNext={handleNextStep} />}
-      {step === 2 && <SelectPlan   step={2} onNext={handleNextStep}/>}
-      {step === 3 && <PickAddOns   step={3} onNext={handleNextStep}/>}
-      {step === 4 && <Summary   recap={recap} step={4} />}
+      {step === 1 && <PersonalInfo  step={step} onNext={handleNextStep} />}
+      {step === 2 && <SelectPlan  step={2} onNext={handleNextStep} />}
+      {step === 3 && <PickAddOns  step={3} onNext={handleNextStep} />}
+      {step === 4 && <Summary recap={recap} step={4} onNext={handleNextStep} />}
+      {step === 5 && <Result  step={5} />}
     </>
   )
 }

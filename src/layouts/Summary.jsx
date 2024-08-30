@@ -2,7 +2,7 @@
 import FormSummary from "./Form/FormSummary";
 import SideBar from "./SideBar/SideBar";
 
-export default function SelectPlan({step, recap}) {
+export default function SelectPlan({step, recap, onNext}) {
   
   return (
       <div>
@@ -13,7 +13,7 @@ export default function SelectPlan({step, recap}) {
             <SideBar step={step} />
 
             {/* Bloc de droite : Formulaire */}
-            <FormSummary recap={recap}/>
+            <FormSummary recap={recap} onNext={onNext}/>
 
           </div>
         </div>

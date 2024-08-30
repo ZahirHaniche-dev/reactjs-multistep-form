@@ -52,7 +52,7 @@ export default function FormPlan({ onNext }) {
                     text-red-700 bg-red-100 rounded-md text-xs">{errorMessage}</p>}
             </div>
             <FormProvider {...methods}>
-                <form onSubmit={onSubmit} noValidate>
+                <form onSubmit={onSubmit} className='animate-fadeIn' noValidate>
                     <ul className="grid grid-cols-3 gap-4 justify-center">
                         {plans.map(plan => (
                             <div key={plan.id} 
