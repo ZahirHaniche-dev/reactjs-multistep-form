@@ -14,8 +14,8 @@ export default function SideBar({step}) {
 
   return (
     <>
-      <div className="animate-fadeIn hidden md:flex col-span-1 bg-blue-700 pt-12 pl-6 rounded-l-lg flex-col bg-cover bg-no-repeat"
-        style={{ backgroundImage: `url(${bgSidebarDesktop})` }} >
+      <div className="animate-fadeIn hidden md:flex col-span-1 bg-blue-700 pt-12 pl-6 rounded-l-lg flex-col 
+      bg-cover bg-no-repeat bg-sidebar-desktop" >
         <ul className="space-y-8">
           { data.map(sidebar => (
               <li key={sidebar.id} className="flex items-center gap-1">

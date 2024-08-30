@@ -14,7 +14,8 @@ export default function SideBar({step}) {
 
   return (
     <>
-      <div className="animate-fadeIn flex md:hidden col-span-1 bg-blue-700 p-12  flex-row bg-cover bg-no-repeat shadow-lg"
+      <div className="animate-fadeIn flex md:hidden col-span-1 bg-blue-700 p-12  flex-row 
+      bg-cover bg-no-repeat shadow-lg bg-sidebar-mobile"
             style={{ backgroundImage: `url(${bgSidebarDesktop})` }} >
             <ul className="flex space-x-8 justify-center w-full">
                 {data.map(sidebar => (

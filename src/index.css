@@ -1,3 +1,18 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.bg-sidebar-desktop {
+    background-image: url('./images/bg-sidebar-desktop.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bg-sidebar-mobile {
+    background-image: url('./images/bg-sidebar-mobile.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
